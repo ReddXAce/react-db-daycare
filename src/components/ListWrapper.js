@@ -9,7 +9,7 @@ export const ListWrapper = () => {
     const [lists, setLists] = useState([])
 
     const addList = list => {
-        setLists([...lists, {id: uuidv4(), kid: list, completed: false, isEditing: false}]) //makes a copy of the current lists. Should have named it kids, tbh.
+        setLists([...lists, {id: uuidv4(), name: list, completed: false, isEditing: false}]) //makes a copy of the current lists. Should have named it kids, tbh.
         console.log(lists)
     }
 
@@ -25,9 +25,9 @@ export const ListWrapper = () => {
         setLists(lists.filter(list => list.id !== id))
     }
 
-    const editKid = (kid, id) => {
+    const editName = (name, id) => {
         setLists(lists.map(list => list.id === id ? {
-            list, kid, isEditing: !list.isEditing} : list))
+            list, name, isEditing: !list.isEditing} : list))
     }
   return (
     <div className='ListWrapper'>
@@ -35,9 +35,9 @@ export const ListWrapper = () => {
         <ListForm addList={addList}/>
         {lists.map((list, index) => ( 
             list.isEditing ? (
-            <EditListForm editList={editKid} kid={list}/>
+            <EditListForm editList={editName} name={list}/>
         ) : (
-            <List kid={list} key={index} /* toggleComplete={toggleComplete} placeholder */ deleteList={deleteList} editList={editList}/>
+            <List name={list} key={index} /* toggleComplete={toggleComplete} placeholder */ deleteList={deleteList} editList={editList}/>
         )
             
         ))}
