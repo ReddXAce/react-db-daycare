@@ -6,7 +6,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 export const List = ({name, toggleComplete, deleteList, editList}) => {
   return (
     <div className='List'>
-        <p /* I'll do something with this... onClick={() => toggleComplete(name.id)} className={`${name.completed ? 'completed':""}`}*/>
+        <p>
             {name.name}
         </p>
         <div /*stores icons*/>
