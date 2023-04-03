@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-export const List = ({name, toggleComplete, deleteList, editList}) => {
+//returns the lists, the items basically, and the icons and functions of the buttons
+export const List = ({name, deleteList, editList}) => {
   return (
     <div className='List'>
         <p>
